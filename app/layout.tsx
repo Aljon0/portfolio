@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { AssistantLauncher } from "@/components/assistant/AssistantLauncher";
+import { GuidedTour } from "@/components/tour/GuidedTour";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main id="main">{children}</main>
         <Footer />
         <AssistantLauncher />
+        <GuidedTour />
       </body>
     </html>
   );

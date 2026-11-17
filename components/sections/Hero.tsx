@@ -2,6 +2,7 @@ import { ArrowDown, Download, MapPin } from "lucide-react";
 import { Avatar } from "@/components/ui/Avatar";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { TourButton } from "@/components/tour/TourButton";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SplitWords } from "@/components/ui/SplitWords";
 import { contact, profile } from "@/data/portfolio";
@@ -50,6 +51,7 @@ export function Hero() {
           >
             <MapPin size={14} aria-hidden="true" />
             {profile.location}
+            <TourButton />
           </p>
         </div>
 
