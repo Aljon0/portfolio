@@ -1,8 +1,7 @@
-import { DeveloperConsole } from "@/components/console/DeveloperConsole";
 import { Container } from "@/components/ui/Container";
 import { contact } from "@/data/portfolio";
-import { gmailComposeUrl } from "@/lib/contact";
 import { COPYRIGHT_YEAR, NAV_ITEMS, SITE } from "@/lib/constants";
+import { gmailComposeUrl } from "@/lib/contact";
 
 const linkClass =
   "inline-block py-1 text-muted transition-colors hover:text-fg";
@@ -55,7 +54,7 @@ export function Footer() {
               </li>
             ) : null}
             <li>
-            <a
+              <a
                 href={gmailComposeUrl(contact.email)}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +70,6 @@ export function Footer() {
           <p className="font-mono text-label text-muted">
             © {COPYRIGHT_YEAR} {SITE.name}
           </p>
-          <DeveloperConsole />
         </div>
       </Container>
     </footer>
