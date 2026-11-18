@@ -1,4 +1,4 @@
-import { EASE, PIN_SCROLL_RATIO, SCRUB_DIM_OPACITY } from "./config";
+import { EASE, PIN_SCROLL_RATIO } from "./config";
 import { gsap } from "./gsap";
 
 /** Hero content fades and lifts while the hero scrolls away. */
@@ -22,9 +22,9 @@ export function buildHeroExit(root: ParentNode, factor: number): void {
 }
 
 /**
- * The biography brightens word by word as you scroll.
- * Desktop: the About section is pinned while this plays.
- * Elsewhere: no pin; it plays while the text moves through the viewport.
+ * The biography lights up word by word as you scroll, from the muted text color to the full
+ * text color (so every word stays readable). Desktop: the About section is pinned while this
+ * plays. Elsewhere: no pin; it plays while the text moves through the viewport.
  */
 export function buildAboutStory(root: ParentNode, pinned: boolean): void {
   const about = root.querySelector<HTMLElement>("#about");
@@ -37,7 +37,7 @@ export function buildAboutStory(root: ParentNode, pinned: boolean): void {
   if (words.length === 0) return;
 
   const to: gsap.TweenVars = {
-    opacity: 1,
+    "--w": 1,
     ease: "none",
     duration: 1,
     stagger: 0.25,
@@ -46,7 +46,7 @@ export function buildAboutStory(root: ParentNode, pinned: boolean): void {
   if (pinned) {
     gsap.fromTo(
       words,
-      { opacity: SCRUB_DIM_OPACITY },
+      { "--w": 0 },
       {
         ...to,
         scrollTrigger: {
@@ -65,7 +65,7 @@ export function buildAboutStory(root: ParentNode, pinned: boolean): void {
 
   gsap.fromTo(
     words,
-    { opacity: SCRUB_DIM_OPACITY },
+    { "--w": 0 },
     {
       ...to,
       scrollTrigger: {

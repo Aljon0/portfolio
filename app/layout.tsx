@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   title: "Al-jon Santiago | Full Stack AI Developer",
   description:
     "Interactive developer portfolio: AI-powered web applications, SaaS platforms and automation systems.",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
